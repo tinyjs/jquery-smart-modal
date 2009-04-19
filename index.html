@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<link rel="stylesheet" href="resets.css" type="text/css" media="screen" charset="utf-8" />	
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="modal.css" type="text/css" media="screen" charset="utf-8" />
+	
+	<script src="http://tinyjs.com/files/projects/jquery-smart-modal/jquery.1.2.6.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://tinyjs.com/files/projects/jquery-smart-modal/jquery.smartmodal.js" type="text/javascript" charset="utf-8"></script>
+	
+	<title>jQuery Modal Example</title>
+	
+</head>
+
+<body>
+	<div id="container">
+		<h1>jQuery Modal</h1>
+		<p>With recent projects I needed a flexible modal box. Most of the ones out there are either horribly bloated or 
+			only work for images, which really sucks when you want a form inside one.</p>
+		<p>Easy answer, make my own... Here it is. By the way, the minimised version in under 2k with a tiny 1k stylesheet.</p>
+
+		<p>It works for images and other containing elements. Here are the examples:</p>
+		
+		<div class='example'>
+			<h2>Show on body load...</h2>
+			<p>This is the really, really annoying type of modal box that loads as the page does. It also runs of <a href='#' rel='on_body_load' class='on_load_modal'>this link</a>.<p>
+			<div class="on_body_load hidden">
+				<p>This is the really, really annoying type of modal box that loads as the page does.</p>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+			</div>
+		</div>
+		
+		<div class="example">
+			<h2>Simple Image Modals</h2>
+			<p>Click on an image to get a pop up bigger version of it.</p>
+			<ul class="horizontal clearfix">
+
+				<li><a href="http://tinyjs.com/files/projects/jquery-smart-modal/Fort-Dunlop-1.jpg" title="Fort Dunlop 1" class="modal1"><img src="http://tinyjs.com/files/projects/jquery-smart-modal/Fort-Dunlop-small-1.jpg" alt='fort dunlop 1'/></a></li>
+				<li><a href="http://tinyjs.com/files/projects/jquery-smart-modal/Fort-Dunlop-2.jpg" title="Fort Dunlop 2" class="modal1"><img src="http://tinyjs.com/files/projects/jquery-smart-modal/Fort-Dunlop-small-2.jpg" alt='fort dunlop 2'/></a></li>
+			</ul>
+			<p>This is about as simple as it gets; give the anchor tag a href for the bigger version of the image and it just works.</p>
+			<p>With the a tag having a title attribute this is then used by the modal pop up as the title of the big image.</p>
+		</div>
+		
+	
+		<div class="example">
+			<h2>Div Modal</h2>
+
+			<p>Instead of clicking on an anchor tag, click on the div below and you get a modal box containing the same html.</p>
+			<div class="modal2"><p><strong>Click Me</strong></p></div>			
+		</div>
+		
+		<div class="example">
+			<h2>Using the rel Attribute</h2>
+			<p><a href="#" rel="rel_modal_content" class="modal3">Click me</a> and instead of an image you will get 
+				the content of a hidden div with a class or id that matches the rel.</p>
+
+			<div id="rel_modal_content" class="hidden">
+				<p>You can put anything in me from full on forms to just a simple bit of text.</p>
+				<p><a href="#">Here is a link</a></p>
+				<ul>
+					<li>An unordered list</li>
+				</ul>
+			</div>
+
+		</div>
+		
+		
+		<div class="example">
+			<h2>Show &amp; Hide Functions</h2>
+			<p><a href="#" rel="modal_class" class="modal4">Click me</a> and you will get a modal box followed some javascript alerts on show, then on close.</p>
+			<div class="modal_class hidden">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+		</div>
+		
+		<div class='example'>
+			<h2>Custom Close Links</h2>
+			<p><a href='#' class='modal5' rel='modal_hidden_1'>Click me</a> and you will get a bunch of text.</p>
+			<p>The extra close link inside the modal will also close the box. This done by simply giving it a class of 'sm_close' as the plugin looks for
+				clicks on .smart_modal_close inside the overlay to close it.</p>
+			<div class="modal_hidden_1 hidden">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p><a href='#' class='sm_close'>This Will close the box as well</a>.</p>				
+			</div>
+		</div>
+		
+		
+		<div class='example'>
+			<h2>More Close Links</h2>
+			<p><a href='#' class='modal6' rel='modal_hidden_2'>Click me</a> and you will get a bunch of text.</p>	
+			<p>Within this text you will see another close link; this time it uses the show function to add a trigger to close the modal link.</p>
+			<div class="modal_hidden_2 hidden">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<p><a href='#' class='custom_modal_close'>This Will close the box as well</a>.</p>				
+			</div>
+		</div>
+		
+		
+		<div class='example'>
+			<h2>Disabling the Overlay Click to close</h2>
+
+			<p><a href='http://tinyjs.com/files/projects/jquery-smart-modal/Fort-Dunlop-small-1.jpg' class='modal7'>Click me</a> and you will get a tiny thumbnail of Fort Dunlop.</p>
+			<p>As with all modal boxes you get a blackened background known as an 'overlay', normally clicking on that will also close the modal. But not in this example! Now you can only click on the x (or any other element with class of 'modal_close') to close it.</p>				
+		</div>
+		
+		
+		
+		
+		
+		<p>If you take a look at the code you will notice that smart modal has totally changed; hopefully for the better.</p>
+		<p>For those of an adventurous nature there are now two new functions you can call manually - .smart_modal_hide() &amp; .smart_modal_show(). 
+			Once you have instantiated the link using .smart_modal() you can call either of those to show or hide it.</p>
+
+	</div>
+	
+
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a.on_load_modal').smart_modal();
+	$('a.on_load_modal').smart_modal_show();
+	$('a.modal1').smart_modal();
+	$('.modal2').smart_modal(); 
+	$('.modal3').smart_modal(); 
+	$('.modal4').smart_modal({show:function(){alert('This happens on show!');}, hide:function(){alert('On Hide!');} });
+	$('.modal5').smart_modal();
+	$('.modal6').smart_modal({show:function(){
+			$('a.custom_modal_close').click(function(){
+				alert('You clicked a custom close link!');
+				$('.modal6').smart_modal_hide();
+				return false;
+			});
+	}});	
+	$('.modal7').smart_modal({hide_on_overlay_click:false});	
+	
+});
+</script>
+
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-2549287-19");
+	pageTracker._trackPageview();
+	} catch(err) {}
+</script>
+
+</body>
+
+</html>
