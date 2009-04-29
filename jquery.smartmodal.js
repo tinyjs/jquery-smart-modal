@@ -11,7 +11,7 @@ modal_count => sm_count
 	$.fn.smart_modal=function(options){
 		return this.each(function(){			
 			if(this._sm) return; //if already a modal return
-			if(typeof(options) != "undefined")	var params = $.extend({}, $.fn.smart_modal.defaults, options); //if some options are passed in merge them
+			if(typeof(options) != "undefined")	var params = $.extend(true, {}, $.fn.smart_modal.defaults, options); //if some options are passed in merge them
 			else var params = $.fn.smart_modal.defaults;
 			if(typeof(sm_count) == "undefined") sm_count=0; //set the counter to 0
 			sm_count++;
