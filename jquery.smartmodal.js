@@ -58,6 +58,7 @@ modal_count => sm_count
 		},
 		remove:function(ele){
 			var pos = ele._sm, h = H[pos];
+			if(h.config.before_hide)	h.config.before_hide();
 			jQ("#sm_content").remove();
 			jQ("#sm_olay").remove();							
 			if(h.config.hide)	h.config.hide();
